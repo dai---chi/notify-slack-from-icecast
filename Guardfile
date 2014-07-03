@@ -16,7 +16,7 @@ def get_last_line file_path
 end
 
 def notify message
-  notifier = Slack::Notifier.new 'reborn', ENV['SLACK_TOKEN'], channel: '#dch_sandbox'
+  notifier = Slack::Notifier.new ENV['SLACK_TEAM'], ENV['SLACK_TOKEN'], channel: ENV['SLACK_CHANNEL']
   notifier.ping message
 end
 
