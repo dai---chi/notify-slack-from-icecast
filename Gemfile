@@ -6,4 +6,5 @@ gem 'guard-shell'
 gem 'slack-notifier'
 gem 'pry'
 gem 'dotenv'
+gem 'sinatra'
 

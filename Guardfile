@@ -2,14 +2,14 @@ require 'slack-notifier'
 require 'dotenv'
 Dotenv.load
 
-ICECAST_LOG_FILE = '/var/log/icecast/playlist.log'
+ICECAST_LOG_FILE = ENV['PLAY_LOG']
 
 def get_last_line file_path
   last_line = ''
   File.open(file_path) do |file|
     lines = file.read
     lines.each_line do |line|
-      last_line = line
+      last_line = line.force_encoding('UTF-8')
     end
   end
   last_line
